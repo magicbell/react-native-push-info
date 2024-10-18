@@ -24,8 +24,8 @@ jobs:
       - name: Create release PR or publish release
         uses: changesets/action@v1
         with:
-          version: yarn changeset version
-          publish: yarn changeset publish
+          version: yarn changeset:version
+          publish: yarn changeset:release
           commit: 'chore: version package'
           title: 'chore: version package'
           createGithubReleases: true
