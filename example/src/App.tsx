@@ -1,17 +1,36 @@
-import { useState, useEffect } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-push-info';
+import { StyleSheet, View, Text, Platform } from 'react-native';
+import {
+  getAndroidApplicationId,
+  getIOSAPNSEnvironment,
+  getIOSBundleId,
+  getIOSTeamId,
+} from 'react-native-push-info';
+
+function IOSInfo() {
+  return (
+    <>
+      <Text>Bundle ID: {getIOSBundleId() || 'unknown'}</Text>
+      <Text>Team ID: {getIOSTeamId() || 'unknown'}</Text>
+      <Text>APNs Environment: {getIOSAPNSEnvironment() || 'unknown'}</Text>
+    </>
+  );
+}
+
+function AndroidInfo() {
+  return (
+    <>
+      <Text>Application ID: {getAndroidApplicationId() || 'unknown'}</Text>
+    </>
+  );
+}
 
 export default function App() {
-  const [result, setResult] = useState<number | undefined>();
-
-  useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      {Platform.select({
+        ios: <IOSInfo />,
+        android: <AndroidInfo />,
+      })}
     </View>
   );
 }
