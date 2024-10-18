@@ -17,6 +17,30 @@ const PushInfo = NativeModules.PushInfo
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return PushInfo.multiply(a, b);
+const assertPlatform = (os: 'ios' | 'android', property: string) => {
+  if (Platform.OS !== os) {
+    console.error(
+      `${property} is not available on this platform (${Platform.OS})`
+    );
+  }
+};
+
+export function getIOSBundleId(): string {
+  assertPlatform('ios', 'getIOSBundleId');
+  return PushInfo.getConstants().bundleId;
+}
+
+export function getIOSTeamId(): string {
+  assertPlatform('ios', 'getIOSTeamId');
+  return PushInfo.getConstants().teamId;
+}
+
+export function getIOSAPNSEnvironment(): string {
+  assertPlatform('ios', 'getIOSAPNSEnvironment');
+  return PushInfo.getConstants().apnsEnvironment;
+}
+
+export function getAndroidApplicationId(): string {
+  assertPlatform('android', 'getAndroidApplicationId');
+  return PushInfo.getConstants().applicationId;
 }

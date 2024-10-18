@@ -1,8 +1,15 @@
+import EmbeddedProvision
+
 @objc(PushInfo)
 class PushInfo: NSObject {
+  lazy var embeddedProvision: EmbeddedProvision? = {
+    return try? EmbeddedProvision.load()
+  }()
 
-  @objc(multiply:withB:withResolver:withRejecter:)
-  func multiply(a: Float, b: Float, resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
-    resolve(a*b)
+  @objc
+  func constantsToExport() -> [String: Any]! {
+    return ["bundleId": Bundle.main.bundleIdentifier as Any,
+            "teamId": embeddedProvision?.entitlements.teamId as Any,
+            "apnsEnvironment": embeddedProvision?.entitlements.apsEnvironment?.rawValue as Any]
   }
 }
