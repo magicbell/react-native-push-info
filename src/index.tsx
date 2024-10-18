@@ -19,7 +19,7 @@ const PushInfo = NativeModules.PushInfo
 
 const assertPlatform = (os: 'ios' | 'android', property: string) => {
   if (Platform.OS !== os) {
-    console.error(
+    throw new Error(
       `${property} is not available on this platform (${Platform.OS})`
     );
   }
