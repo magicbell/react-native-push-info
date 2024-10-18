@@ -81,3 +81,6 @@ lib/
 ios/generated
 android/generated
 example/ios/.xcode.env.local
+
+# CI results
+coverage
