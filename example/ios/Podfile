@@ -14,6 +14,9 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
+# Silence warnings in code we don't own
+inhibit_all_warnings!
+
 target 'PushInfoExample' do
   config = use_native_modules!
 
