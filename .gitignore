@@ -84,3 +84,4 @@ example/ios/.xcode.env.local
 
 # CI results
 coverage
+junit.xml
