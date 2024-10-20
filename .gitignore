@@ -42,10 +42,10 @@ android.iml
 
 # Cocoapods
 #
-apps/example/ios/Pods
+example/ios/Pods
 
 # Ruby
-apps/example/vendor/
+example/vendor/
 
 # node.js
 #
@@ -80,7 +80,7 @@ lib/
 # React Native Codegen
 ios/generated
 android/generated
-apps/example/ios/.xcode.env.local
+ios/.xcode.env.local
 
 # CI results
 coverage

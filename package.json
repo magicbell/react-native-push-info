@@ -93,7 +93,7 @@
     "react-native": "*"
   },
   "workspaces": [
-    "apps/*"
+    "packages/*"
   ],
   "packageManager": "yarn@3.6.1",
   "jest": {
