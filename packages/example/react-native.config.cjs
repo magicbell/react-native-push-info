@@ -1,5 +1,8 @@
 const path = require('path');
 
+console.log("x")
+console.log(path.join(__dirname, '../react-native-push-info'))
+console.log("y")
 module.exports = {
   project: {
     ios: {
