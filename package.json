@@ -1,69 +1,17 @@
 {
-  "name": "react-native-push-info",
-  "version": "0.1.0",
-  "description": "Essential information for interacting with push notification APIs like APNs and FCM",
-  "source": "./src/index.tsx",
-  "main": "./lib/commonjs/index.js",
-  "module": "./lib/module/index.js",
-  "exports": {
-    ".": {
-      "import": {
-        "types": "./lib/typescript/module/src/index.d.ts",
-        "default": "./lib/module/index.js"
-      },
-      "require": {
-        "types": "./lib/typescript/commonjs/src/index.d.ts",
-        "default": "./lib/commonjs/index.js"
-      }
-    }
-  },
-  "files": [
-    "src",
-    "lib",
-    "android",
-    "ios",
-    "cpp",
-    "*.podspec",
-    "!ios/build",
-    "!android/build",
-    "!android/gradle",
-    "!android/gradlew",
-    "!android/gradlew.bat",
-    "!android/local.properties",
-    "!**/__tests__",
-    "!**/__fixtures__",
-    "!**/__mocks__",
-    "!**/.*"
-  ],
+  "name": "root",
+  "version": "0.0.0",
   "scripts": {
     "example": "yarn workspace react-native-push-info-example",
     "test": "jest",
     "test:ci": "jest -ci --coverage --reporters=default --reporters=jest-junit",
     "typecheck": "tsc",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
-    "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build lib",
-    "build": "bob build",
+    "clean": "yarn workspaces foreach run clean",
+    "build": "yarn workspace react-native-push-info build",
     "changeset": "changeset",
     "changeset:version": "changeset version",
     "changeset:release": "yarn build && changeset publish"
-  },
-  "keywords": [
-    "react-native",
-    "ios",
-    "android"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+http://github.com/magicbell/react-native-push-info.git"
-  },
-  "author": "Ullrich Schäfer <ullrich@magicbell.io> (http://www.magicbell.com)",
-  "license": "MIT",
-  "bugs": {
-    "url": "http://github.com/magicbell/react-native-push-info/issues"
-  },
-  "homepage": "http://github.com/magicbell/react-native-push-info#readme",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.0",
@@ -81,27 +29,37 @@
     "prettier": "^3.0.3",
     "react": "18.3.1",
     "react-native": "0.75.4",
-    "react-native-builder-bob": "^0.30.2",
+    "tshy": "^3.0.2",
     "turbo": "^1.10.7",
     "typescript": "^5.2.2"
   },
-  "resolutions": {
-    "@types/react": "^18.2.44"
-  },
-  "peerDependencies": {
-    "react": "*",
-    "react-native": "*"
-  },
   "workspaces": [
-    ".",
-    "example"
+    "packages/*"
   ],
   "packageManager": "yarn@3.6.1",
   "jest": {
-    "preset": "react-native",
-    "modulePathIgnorePatterns": [
-      "<rootDir>/example/node_modules",
-      "<rootDir>/lib/"
+    "projects": [
+      {
+        "displayName": "example",
+        "preset": "react-native",
+        "testMatch": [
+          "<rootDir>/packages/example/**/?(*.)+(spec|test).[jt]s?(x)"
+        ]
+      },
+      {
+        "displayName": "react-native-push-info",
+        "preset": "react-native",
+        "testMatch": [
+          "<rootDir>/packages/react-native-push-info/**/?(*.)+(spec|test).[jt]s?(x)"
+        ],
+        "modulePathIgnorePatterns": [
+          "<rootDir>/packages/react-native-push-info/dist/"
+        ],
+        "moduleNameMapper": {
+          "^react-native$": "<rootDir>/node_modules/react-native",
+          "(.+)\\.js": "$1"
+        }
+      }
     ]
   },
   "eslintConfig": {
@@ -122,11 +80,15 @@
           "useTabs": false
         }
       ]
+    },
+    "parserOptions": {
+      "warnOnUnsupportedTypeScriptVersion": false
     }
   },
   "eslintIgnore": [
     "node_modules/",
-    "lib/"
+    "dist/",
+    "coverage/"
   ],
   "prettier": {
     "quoteProps": "consistent",
@@ -134,31 +96,6 @@
     "tabWidth": 2,
     "trailingComma": "es5",
     "useTabs": false
-  },
-  "react-native-builder-bob": {
-    "source": "src",
-    "output": "lib",
-    "targets": [
-      [
-        "commonjs",
-        {
-          "esm": true
-        }
-      ],
-      [
-        "module",
-        {
-          "esm": true
-        }
-      ],
-      [
-        "typescript",
-        {
-          "project": "tsconfig.build.json",
-          "esm": true
-        }
-      ]
-    ]
   },
   "create-react-native-library": {
     "type": "module-legacy",
