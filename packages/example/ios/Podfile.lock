@@ -1,7 +1,7 @@
 PODS:
   - boost (1.84.0)
   - DoubleConversion (1.1.6)
-  - EmbeddedProvision (1.0.1)
+  - EmbeddedProvision (1.1.0)
   - FBLazyVector (0.75.4)
   - fmt (9.1.0)
   - glog (0.3.5)
@@ -1240,7 +1240,7 @@ PODS:
     - Yoga
   - react-native-push-info (0.1.0):
     - DoubleConversion
-    - EmbeddedProvision (= 1.0.1)
+    - EmbeddedProvision (= 1.1.0)
     - glog
     - hermes-engine
     - RCT-Folly (= 2024.01.01.00)
@@ -1727,7 +1727,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   boost: 4cb898d0bf20404aab1850c656dcea009429d6c1
   DoubleConversion: 76ab83afb40bddeeee456813d9c04f67f78771b5
-  EmbeddedProvision: cc9838edfc2c4b1803fb96a8637b91458e0e927b
+  EmbeddedProvision: 573da2ac95670efa9e1ffcf53fa652f61b86a4f2
   FBLazyVector: 430e10366de01d1e3d57374500b1b150fe482e6d
   fmt: 4c2741a687cc09f0634a2e2c72a838b99f1ff120
   glog: 69ef571f3de08433d766d614c73a9838a06bf7eb
@@ -1761,7 +1761,7 @@ SPEC CHECKSUMS:
   React-logger: d79b704bf215af194f5213a6b7deec50ba8e6a9b
   React-Mapbuffer: b982d5bba94a8bc073bda48f0d27c9b28417fae3
   React-microtasksnativemodule: 2b73e68f0462f3175f98782db08896f8501afd20
-  react-native-push-info: a77f2a50c0e54cced804025315eb113e2c4c90cb
+  react-native-push-info: 8649124eede697cb7e3d534f6b4973fa75b8d0db
   React-nativeconfig: 8c83d992b9cc7d75b5abe262069eaeea4349f794
   React-NativeModulesApple: 9f7920224a3b0c7d04d77990067ded14cee3c614
   React-perflogger: 59e1a3182dca2cee7b9f1f7aab204018d46d1914
