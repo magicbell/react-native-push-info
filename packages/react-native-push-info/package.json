@@ -1,0 +1,86 @@
+{
+  "name": "react-native-push-info",
+  "version": "0.1.0",
+  "description": "Essential information for interacting with push notification APIs like APNs and FCM",
+  "files": [
+    "src",
+    "dist",
+    "android",
+    "ios",
+    "cpp",
+    "*.podspec",
+    "!ios/build",
+    "!android/build",
+    "!android/gradle",
+    "!android/gradlew",
+    "!android/gradlew.bat",
+    "!android/local.properties",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__",
+    "!**/.*"
+  ],
+  "scripts": {
+    "clean": "del-cli -v android/build dist",
+    "build": "tshy"
+  },
+  "tshy": {
+    "project": "./tsconfig.build.json",
+    "exclude": [
+      "**/__tests__/**"
+    ],
+    "exports": "./src/index.tsx"
+  },
+  "keywords": [
+    "react-native",
+    "ios",
+    "android"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+http://github.com/magicbell/react-native-push-info.git",
+    "directory": "packages/react-native-push-info"
+  },
+  "author": "Ullrich Schäfer <ullrich@magicbell.io> (http://www.magicbell.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "http://github.com/magicbell/react-native-push-info/issues"
+  },
+  "homepage": "http://github.com/magicbell/react-native-push-info#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "@react-native/eslint-config": "^0.73.1",
+    "@types/react": "^18.2.44",
+    "react": "18.3.1",
+    "react-native": "0.75.4",
+    "turbo": "^1.10.7",
+    "typescript": "^5.2.2"
+  },
+  "resolutions": {
+    "@types/react": "^18.2.44"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "source": "./src/index.tsx",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/index.d.ts",
+        "default": "./dist/commonjs/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/commonjs/index.js",
+  "types": "./dist/commonjs/index.d.ts",
+  "module": "./dist/esm/index.js"
+}

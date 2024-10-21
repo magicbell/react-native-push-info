@@ -3,7 +3,7 @@ import {
   getIOSAPNSEnvironment,
   getIOSBundleId,
   getIOSTeamId,
-} from '../index';
+} from '../index.js';
 
 import { Platform } from 'react-native';
 
