@@ -30,12 +30,12 @@ export function getIOSBundleId(): string {
   return PushInfo.getConstants().bundleId;
 }
 
-export function getIOSTeamId(): string {
+export function getIOSTeamId(): string | undefined {
   assertPlatform('ios', 'getIOSTeamId');
   return PushInfo.getConstants().teamId;
 }
 
-export function getIOSAPNSEnvironment(): string {
+export function getIOSAPNSEnvironment(): string | undefined {
   assertPlatform('ios', 'getIOSAPNSEnvironment');
   return PushInfo.getConstants().apnsEnvironment;
 }
