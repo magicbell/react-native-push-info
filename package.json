@@ -5,12 +5,16 @@
   "scripts": {
     "example": "yarn workspace react-native-push-info-example",
     "prepare": "yarn build",
+    "dev": "yarn build; yarn example start",
+    "dev:ios": "yarn build; yarn example ios",
+    "dev:android": "yarn build; yarn example android",
     "test": "jest",
     "test:ci": "jest -ci --coverage --reporters=default --reporters=jest-junit",
     "typecheck": "tsc",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "clean": "yarn workspaces foreach run clean",
     "build": "yarn workspace react-native-push-info build",
+    "watch": "yarn build --watch",
     "changeset": "changeset",
     "changeset:version": "changeset version",
     "changeset:release": "yarn build && changeset publish"

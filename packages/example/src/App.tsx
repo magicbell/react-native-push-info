@@ -5,8 +5,7 @@ import {
   getIOSAPNSEnvironment,
   getIOSBundleId,
   getIOSTeamId,
-  // @ts-ignore // Importing from src to get hot reloading from sources. Downside, tsc doesn't approve.
-} from 'react-native-push-info/src/index.tsx';
+} from 'react-native-push-info';
 
 function IOSInfo() {
   return (
