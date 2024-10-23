@@ -18,7 +18,9 @@
     "!**/__tests__",
     "!**/__fixtures__",
     "!**/__mocks__",
-    "!**/.*"
+    "!**/.*",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "clean": "del-cli -v android/build dist",
