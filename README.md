@@ -10,6 +10,8 @@ This library is useful when you cannot (or do not want to) hardcode the constant
 
 Look at a common [usage scenario](#usage-scenario) to see if you could benefit from using `react-native-push-info`.
 
+## TOC
+
 <!-- TOC -->
 
 - [Installation](#installation)
@@ -91,7 +93,7 @@ Finally, you might find yourself with different internal builds of your app, usi
 
 Contributions of any kind are welcome.
 
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
+See the [contributing guide](./CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
 
 ## License
 
