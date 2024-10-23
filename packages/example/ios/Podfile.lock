@@ -1240,7 +1240,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - react-native-push-info (0.1.0):
+  - react-native-push-info (0.1.1):
     - DoubleConversion
     - EmbeddedProvision (= 1.1.1)
     - glog
@@ -1765,7 +1765,7 @@ SPEC CHECKSUMS:
   React-logger: d79b704bf215af194f5213a6b7deec50ba8e6a9b
   React-Mapbuffer: b982d5bba94a8bc073bda48f0d27c9b28417fae3
   React-microtasksnativemodule: 2b73e68f0462f3175f98782db08896f8501afd20
-  react-native-push-info: 6b6c161293deb3d9df77690a06037b863dacaf5a
+  react-native-push-info: 97acd2881594b83b0d67829f1eaede1a92c600b2
   React-nativeconfig: 8c83d992b9cc7d75b5abe262069eaeea4349f794
   React-NativeModulesApple: 9f7920224a3b0c7d04d77990067ded14cee3c614
   React-perflogger: 59e1a3182dca2cee7b9f1f7aab204018d46d1914
