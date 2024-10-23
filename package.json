@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "example": "yarn workspace react-native-push-info-example",
+    "prepare": "yarn build",
     "test": "jest",
     "test:ci": "jest -ci --coverage --reporters=default --reporters=jest-junit",
     "typecheck": "tsc",

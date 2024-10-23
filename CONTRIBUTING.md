@@ -6,10 +6,10 @@ We want this community to be friendly and respectful to each other. Please follo
 
 ## Development workflow
 
-This project is a monorepo managed using [Yarn workspaces](https://yarnpkg.com/features/workspaces). It contains the following packages:
+This project is a monorepo managed using [Yarn workspaces](https://yarnpkg.com/features/workspaces). It contains the following packages in the `packages` folder:
 
-- The library package in the root directory.
-- An example app in the `example/` directory.
+- `react-native-push-info`: The main library
+- `example`: An example app, linking to that library
 
 To get started with the project, run `yarn` in the root directory to install the required dependencies for each package:
 
