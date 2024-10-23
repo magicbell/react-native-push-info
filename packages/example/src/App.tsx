@@ -1,10 +1,12 @@
 import { StyleSheet, View, Text, Platform } from 'react-native';
+
 import {
   getAndroidApplicationId,
   getIOSAPNSEnvironment,
   getIOSBundleId,
   getIOSTeamId,
-} from 'react-native-push-info';
+  // @ts-ignore // Importing from src to get hot reloading from sources. Downside, tsc doesn't approve.
+} from 'react-native-push-info/src/index.tsx';
 
 function IOSInfo() {
   return (
