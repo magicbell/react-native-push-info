@@ -19,15 +19,15 @@ yarn
 
 > Since the project relies on Yarn workspaces, you cannot use [`npm`](https://github.com/npm/cli) for development.
 
-The [example app](/example/) demonstrates usage of the library. You need to run it to test any changes you make.
+The [example app](/packages/example/) demonstrates usage of the library. You need to run it to test any changes you make.
 
 It is configured to use the local version of the library, so any changes you make to the library's source code will be reflected in the example app. Changes to the library's JavaScript code will be reflected in the example app without a rebuild, but native code changes will require a rebuild of the example app.
 
-If you want to use Android Studio or XCode to edit the native code, you can open the `example/android` or `example/ios` directories respectively in those editors. To edit the Objective-C or Swift files, open `example/ios/PushInfoExample.xcworkspace` in XCode and find the source files at `Pods > Development Pods > react-native-push-info`.
+If you want to use Android Studio or Xcode to edit the native code, you can open the `example/android` or `example/ios` directories respectively in those editors. To edit the Objective-C or Swift files, open `example/ios/PushInfoExample.xcworkspace` in Xcode and find the source files at `Pods > Development Pods > react-native-push-info`.
 
-To edit the Java or Kotlin files, open `example/android` in Android studio and find the source files at `react-native-push-info` under `Android`.
+To edit the Java or Kotlin files, open `packages/example/android` in Android studio and find the source files at `react-native-push-info` under `Android`.
 
-You can use various commands from the root directory to work with the project.
+You can use various commands **from the root directory** to work with the project.
 
 To start the packager:
 
@@ -66,19 +66,6 @@ Remember to add tests for your change if possible. Run the unit tests by:
 yarn test
 ```
 
-### Commit message convention
-
-We follow the [conventional commits specification](https://www.conventionalcommits.org/en) for our commit messages:
-
-- `fix`: bug fixes, e.g. fix crash due to deprecated method.
-- `feat`: new features, e.g. add new method to the module.
-- `refactor`: code refactor, e.g. migrate from class components to hooks.
-- `docs`: changes into documentation, e.g. add usage example for the module..
-- `test`: adding or updating tests, e.g. add integration tests using detox.
-- `chore`: tooling changes, e.g. change CI config.
-
-Our pre-commit hooks verify that your commit message matches this format when committing.
-
 ### Linting and tests
 
 [ESLint](https://eslint.org/), [Prettier](https://prettier.io/), [TypeScript](https://www.typescriptlang.org/)
@@ -86,16 +73,6 @@ Our pre-commit hooks verify that your commit message matches this format when co
 We use [TypeScript](https://www.typescriptlang.org/) for type checking, [ESLint](https://eslint.org/) with [Prettier](https://prettier.io/) for linting and formatting the code, and [Jest](https://jestjs.io/) for testing.
 
 Our pre-commit hooks verify that the linter and tests pass when committing.
-
-### Publishing to npm
-
-We use [release-it](https://github.com/release-it/release-it) to make it easier to publish new versions. It handles common tasks like bumping version based on semver, creating tags and releases etc.
-
-To publish new versions, run the following:
-
-```sh
-yarn release
-```
 
 ### Scripts
 
@@ -108,6 +85,24 @@ The `package.json` file contains various scripts for common tasks:
 - `yarn example start`: start the Metro server for the example app.
 - `yarn example android`: run the example app on Android.
 - `yarn example ios`: run the example app on iOS.
+
+
+### Changesets
+
+We use [Changesets](https://github.com/changesets/changesets) to manage our releases.
+If you make a significant change that justifies a version bump you can add one by running `yarn changeset`.
+
+We use [semantic versioning](https://semver.org). The gist is:
+
+> MAJOR version when you make incompatible API changes
+> MINOR version when you add functionality in a backward compatible manner
+> PATCH version when you make backward compatible bug fixes
+
+Minor and patch version changes typically only need one line of explanation. Major version bumps should include an explanation of the breaking changes and upgrade steps.
+
+### Automated releases
+
+Once your PR with a changeset merges, an automated GitHub workflow kicks into gears and prepares a new release PR. You will automatically be tagged in that PR and can follow the release to see when your changes become publicly available.
 
 ### Sending a pull request
 
