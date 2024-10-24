@@ -20,10 +20,11 @@
     "changeset:release": "yarn build && changeset publish"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.25.3",
     "@changesets/changelog-github": "^0.5.0",
     "@changesets/cli": "^2.27.9",
     "@evilmartians/lefthook": "^1.5.0",
-    "@react-native/eslint-config": "^0.73.1",
+    "@react-native/eslint-config": "0.76.0",
     "@types/jest": "^29.5.5",
     "@types/react": "^18.2.44",
     "del-cli": "^5.1.0",
@@ -34,7 +35,7 @@
     "jest-junit": "^16.0.0",
     "prettier": "^3.0.3",
     "react": "18.3.1",
-    "react-native": "0.75.4",
+    "react-native": "0.76.0",
     "tshy": "^3.0.2",
     "turbo": "^1.10.7",
     "typescript": "^5.2.2"
@@ -58,9 +59,6 @@
         "testMatch": [
           "<rootDir>/packages/react-native-push-info/**/?(*.)+(spec|test).[jt]s?(x)"
         ],
-        "modulePathIgnorePatterns": [
-          "<rootDir>/packages/react-native-push-info/dist/"
-        ],
         "moduleNameMapper": {
           "^react-native$": "<rootDir>/node_modules/react-native",
           "(.+)\\.js": "$1"
@@ -72,6 +70,9 @@
     "root": true,
     "extends": [
       "@react-native",
+      "prettier"
+    ],
+    "plugins": [
       "prettier"
     ],
     "rules": {
