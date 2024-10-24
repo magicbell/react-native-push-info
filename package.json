@@ -34,7 +34,7 @@
     "jest-junit": "^16.0.0",
     "prettier": "^3.0.3",
     "react": "18.3.1",
-    "react-native": "0.75.4",
+    "react-native": "0.76.0",
     "tshy": "^3.0.2",
     "turbo": "^1.10.7",
     "typescript": "^5.2.2"
@@ -57,9 +57,6 @@
         "preset": "react-native",
         "testMatch": [
           "<rootDir>/packages/react-native-push-info/**/?(*.)+(spec|test).[jt]s?(x)"
-        ],
-        "modulePathIgnorePatterns": [
-          "<rootDir>/packages/react-native-push-info/dist/"
         ],
         "moduleNameMapper": {
           "^react-native$": "<rootDir>/node_modules/react-native",
