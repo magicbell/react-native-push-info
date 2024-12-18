@@ -1,6 +1,6 @@
 {
   "name": "react-native-push-info",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Essential information for interacting with push notification APIs like APNs and FCM",
   "files": [
     "src",
